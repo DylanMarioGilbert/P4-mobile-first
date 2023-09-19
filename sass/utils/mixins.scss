@@ -1,0 +1,63 @@
+@use "./colors";
+
+@mixin gradient($opacity: 0.9) {
+    background-image: linear-gradient(
+        to top,
+        rgba(147,86,220,$opacity), 
+        rgba(255,121,218,$opacity)
+        );
+}
+@mixin box-shadow {
+    box-shadow: 2PX 1PX 8px -3px colors.$lightgrey;
+}
+@mixin transform-zoom ($zoom-level:1.02,$transformation: null){
+     transform: $transformation scale($zoom-level);
+}
+
+@mixin font-awesome ($font-weight: 400) { 
+    display: inline-block;
+    position: absolute;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font awesome 5 free";
+    font-weight: $font-weight;
+
+}
+
+@mixin heart($opacity: 1, $font-weight: 400, $color: inherit) 
+{
+   @include font-awesome($font-weight);
+            content:"\f004";
+            font-size: 2em;
+            right: 1em;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: $opacity;
+            color: $color;
+            background-clip: text;
+            -webkit-background-clip: text;
+            transition: all 200ms ease-in-out;
+}
+
+
+
+@mixin base-button {color: white;
+    font-weight: 300;
+    font-size: 1.5em;
+    padding: 1em 2em;
+    border: none;
+    border-radius: 2em;
+    transition: transform 200ms;
+    margin-top: 1em;
+    cursor: pointer;
+    @include box-shadow;
+    @include gradient;
+    &:hover {
+        transform: scale(1.02);
+        opacity: 0.9;
+    
+    }
+
+}

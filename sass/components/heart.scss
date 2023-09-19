@@ -1,0 +1,31 @@
+@import "../utils/mixins";
+
+.heart {
+    display: flex;
+    justify-content: flex-end;
+    align-items:end;
+    position: relative;
+    width: fit-content;
+    font-size: xx-large;
+
+    :nth-child(2) {
+        position: absolute;
+        transform: translateY(50%);
+        opacity: 0;
+        transition: all 200ms ease-in-out;
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        @include gradient(1);
+        display: flex;
+        align-items: flex-end;
+    }
+
+    &:hover {
+        :nth-child(2) {
+            opacity: 1;
+            transform: translateY(0%) scale(1.1);
+        }
+    }
+
+}

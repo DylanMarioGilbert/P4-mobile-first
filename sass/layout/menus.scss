@@ -1,0 +1,91 @@
+@use "../utils/variables";
+@use "../utils/colors";
+@use "../utils/mixins";
+
+#homepage {
+
+    .menus {
+        padding-bottom: 2em;
+        background-color: colors.$lightergrey;
+
+        h2 {
+            margin-bottom: 1.5em;
+        }
+
+    .menus__cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+                gap: 2em;
+
+                @media (min-width : variables.$breakpoint) {        
+                    grid-template-columns: repeat(1, 1fr);
+                };
+
+
+
+        .new {
+            position: relative;
+        }
+
+        .new::before {
+            content: "Nouveau";
+            position: absolute;
+            height: 2em;
+            width: 5em;
+            background-color: colors.$color-tertiary;
+            color: darken(colors.$color-tertiary, 50%);
+            display: grid;
+            place-items: center;
+            right: 1em;
+            top: 1em;
+        }
+
+    }
+
+
+
+
+
+.card {
+    &__image {
+        height: 15em;
+        border-radius: 1em 1em 0 0;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    @for $i from 1 through 4 {
+        &__image-#{$i} {
+            background-image: url("../../assets/menu-#{$i}.jpg")
+        }
+
+    }
+    
+    &__description {
+        background-color: white;
+        border-radius: 0 0 1em 1em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 13px;
+
+        h3 {
+            padding: 0.1em;
+        }
+    
+        p {
+            padding: 0.1em;
+            font-weight: 100;
+        }
+
+        .heart {
+
+            align-items: center;
+        }
+
+    }
+
+}
+
+}
+}

@@ -1,0 +1,19 @@
+Pour un nouveau projet
+
+
+.git init
+
+.npm init
+bis. vérifier que package.json existe
+
+.npm install sass postcss react
+
+vérifier que node_modules existe et package-lock.json existe
+
+
+Après avoir cloné le projet de quelqu'un d'autre:
+1.git clone
+.npm install.npm run _le_script_dans_package.json_
+
+
+
