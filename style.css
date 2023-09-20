@@ -16,11 +16,11 @@ body {
 }
 
 .container {
-  padding: 0 7em;
+  padding: 0 0;
 }
 @media (min-width: 1000px) {
   .container {
-    padding: 0 0em;
+    padding: 0 7em;
   }
 }
 
@@ -147,15 +147,21 @@ header {
   margin-bottom: 2em;
   counter-reset: steps;
 }
+@media (min-width: 1000px) {
+  .tuto h2 {
+    padding-left: 4.5em;
+  }
+}
 .tuto ol {
   display: flex;
+  flex-direction: column;
   gap: 2em;
 }
 @media (min-width: 1000px) {
   .tuto ol {
-    flex-direction: column;
-    padding-right: 15em;
-    padding-left: 15em;
+    flex-direction: row;
+    margin-right: 5em;
+    margin-left: 5em;
   }
 }
 .tuto li {
@@ -205,13 +211,14 @@ header {
   margin-bottom: 1.5em;
 }
 #homepage .menus .menus__cards {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 2em;
 }
 @media (min-width: 1000px) {
   #homepage .menus .menus__cards {
-    grid-template-columns: repeat(1, 1fr);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 #homepage .menus .menus__cards .new {

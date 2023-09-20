@@ -15,10 +15,10 @@ body {
     background-color: colors.$lightergrey;
 }
 .container {
-    padding: 0 7em;
+    padding: 0 0;
 
     @media (min-width:1000px) {
-        padding: 0 0em;
+        padding: 0 7em;
     }
 }
 

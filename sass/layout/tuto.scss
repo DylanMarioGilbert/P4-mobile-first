@@ -8,17 +8,24 @@
     background-color: colors.$lightestgrey;
     margin-bottom: 2em;
     counter-reset:steps;
+
+    h2 {
+        @media (min-width:1000px) {
+            padding-left: 4.5em;
+        }
+    }
     
     
     & ol {
         
     
         display: flex;
+        flex-direction: column;
         gap: 2em;
         @media (min-width : variables.$breakpoint){
-            flex-direction : column;
-            padding-right: 15em;
-            padding-left: 15em;
+            flex-direction : row;
+            margin-right: 5em;
+            margin-left: 5em;
         }
     }
         
